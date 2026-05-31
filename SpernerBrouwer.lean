@@ -18,9 +18,7 @@ Changes from previous version:
   4. labelFromMap_is_sperner fully proved
 -/
 
--- ================================================================
 -- §1. The Standard 2-Simplex
--- ================================================================
 
 def stdSimplex2 : Set (Fin 3 → ℝ) :=
   { x | (∀ i, 0 ≤ x i) ∧ ∑ i, x i = 1 }
@@ -54,9 +52,7 @@ lemma isCompact : IsCompact stdSimplex2 := by
 
 end stdSimplex2
 
--- ================================================================
 -- §2. Triangulation Vertices
--- ================================================================
 
 def TVertex (n : ℕ) : Type :=
   { p : Fin (n + 1) × Fin (n + 1) // p.1.val + p.2.val ≤ n }
@@ -100,9 +96,7 @@ lemma TVertex.toPoint_mem (n : ℕ) (hn : 0 < n) (v : TVertex n) :
          (1 - v.val.1.val / (n : ℝ) - v.val.2.val / (n : ℝ)) = 1
     ring
 
--- ================================================================
 -- §3. Sperner Labeling
--- ================================================================
 
 def SpernerLabeling (n : ℕ) := TVertex n → Fin 3
 
@@ -123,9 +117,7 @@ structure IsSpernerLabeling (n : ℕ) (hn : 0 < n) (L : SpernerLabeling n) : Pro
   corner2 : ∀ v, v.val.1.val = 0 ∧ v.val.2.val = n → L v = 1
   face    : ∀ k v, TVertex.onFace k n v               → L v ≠ k
 
--- ================================================================
 -- §4. Triangles and Full Labeling
--- ================================================================
 
 -- Added Fintype derivation so STriangle gets a Fintype instance below
 inductive Orient | Up | Down deriving DecidableEq, Fintype
@@ -218,9 +210,7 @@ instance isFullyLabeled_decidable (n : ℕ) (L : SpernerLabeling n) (T : STriang
       L (T.vert n i) = 0 ∧ L (T.vert n j) = 1 ∧ L (T.vert n k) = 2) := hj
   exact Fintype.decidableExistsFintype
 
--- ================================================================
 -- §5. Distinguished Edges and Parity
--- ================================================================
 
 def IsDistinguished (n : ℕ) (L : SpernerLabeling n) (v w : TVertex n) : Prop :=
   (L v = 0 ∧ L w = 1) ∨ (L v = 1 ∧ L w = 0)
@@ -291,9 +281,7 @@ lemma distCount_not_fully_labeled {n : ℕ} (L : SpernerLabeling n) (T : STriang
      | exact ⟨1, 2, 0, by decide, by decide, by decide, h1, h2, h0⟩
      | exact ⟨2, 1, 0, by decide, by decide, by decide, h2, h1, h0⟩)
 
--- ================================================================
 -- §6. allTriangles and Sperner's Lemma
--- ================================================================
 
 -- Now that STriangle n has Fintype, allTriangles is just Finset.univ
 def allTriangles (n : ℕ) : Finset (STriangle n) := Finset.univ
@@ -306,9 +294,7 @@ axiom sperner_lemma (n : ℕ) (hn : 0 < n)
     (L : SpernerLabeling n) (hL : IsSpernerLabeling n hn L) :
     Odd (Finset.card ((allTriangles n).filter (IsFullyLabeled n L)))
 
--- ================================================================
 -- §7. Labeling from a Fixed-Point-Free Map
--- ================================================================
 
 lemma exists_coord_gt {f : (Fin 3 → ℝ) → Fin 3 → ℝ}
     {v : Fin 3 → ℝ} (hv : v ∈ stdSimplex2) (hfv : f v ∈ stdSimplex2)
@@ -436,9 +422,7 @@ lemma labelFromMap_is_sperner
       field_simp [ne_of_gt hn']
       linarith
 
--- ================================================================
 -- §8. Brouwer's Fixed Point Theorem
--- ================================================================
 
 theorem brouwer_fixed_point_2d
     (f : (Fin 3 → ℝ) → Fin 3 → ℝ)
