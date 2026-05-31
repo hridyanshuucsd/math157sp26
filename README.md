@@ -12,7 +12,7 @@ This repository contains a Lean 4 / Mathlib formalization of Brouwer's Fixed Poi
 |------|-------------|
 | `SpernerBrouwer.lean` | Main Lean 4 source file |
 | `MATH157_Essay.pdf` | Part 1 essay: precise statements, proof pathway, and what formalization reveals |
-| `MATH157_Week8_ScopeReport.pdf` | Scope adjustment report documenting changes made during the project |
+| `Week8_MATH157.pdf` | Scope adjustment report documenting changes made during the project |
 
 ## Compilation Status
 
