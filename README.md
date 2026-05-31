@@ -1,6 +1,6 @@
 # Formalizing Brouwer's Fixed Point Theorem via Sperner's Lemma
 
-MATH 157 Final Project — Hridyanshu
+MATH 157 Final Project by Hridyanshu
 
 ## What This Project Does
 
