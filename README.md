@@ -4,7 +4,7 @@ MATH 157 Final Project — Hridyanshu
 
 ## What This Project Does
 
-This repository contains a Lean 4 / Mathlib formalization of Brouwer's Fixed Point Theorem in two dimensions, proved via Sperner's Lemma. The proof proceeds in two stages. First, given any continuous self-map of the standard 2-simplex that has no fixed point, we construct a valid Sperner labeling of the barycentric subdivision by assigning each vertex the index of a coordinate that the map strictly decreases at that point. Second, Sperner's Lemma guarantees an odd (hence positive) number of fully labeled triangles at every subdivision level, and a sequential compactness argument extracts a fixed point from the resulting sequence of triangles.
+This repository contains a Lean4/Mathlib formalization of Brouwer's Fixed Point Theorem in two dimensions, proved via Sperner's Lemma. The proof proceeds in two stages. First, given any continuous self-map of the standard 2-simplex that has no fixed point, we construct a valid Sperner labeling of the barycentric subdivision by assigning each vertex the index of a coordinate that the map strictly decreases at that point. Second, Sperner's Lemma guarantees an odd (hence positive) number of fully labeled triangles at every subdivision level, and a sequential compactness argument extracts a fixed point from the resulting sequence of triangles.
 
 ## Repository Contents
 
