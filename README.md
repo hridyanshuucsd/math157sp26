@@ -34,7 +34,7 @@ lake build
 
 Mathlib is the only dependency. No other packages are required.
 
-**You can also run SpernerBrouwer.lean on https://live.lean-lang.org/**
+**You can also run SpernerBrouwer.lean directly on https://live.lean-lang.org/. You will get one sorry, that's it.**
 
 ## Project Structure
 
